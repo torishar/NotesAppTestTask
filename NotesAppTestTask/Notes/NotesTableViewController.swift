@@ -13,12 +13,24 @@ class NotesTableViewController: UITableViewController {
 
     let realm = try! Realm()
     var folderId: ObjectId?
-    
+    var service = Service()
     var notes: [NoteModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getNotes()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getNotes()
+    }
+    
+    
+    @IBAction func addNewNote(_ sender: Any) {
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addNewNote") as? NoteViewController {
+            viewController.folderId = folderId
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     private func getNotes() {
@@ -34,9 +46,26 @@ class NotesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "note", for: indexPath)
-        cell.detailTextLabel?.text = notes?[indexPath.row].noteTitle
+        cell.textLabel?.text = notes?[indexPath.row].noteTitle
         
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let note = notes?[indexPath.row]{
+                service.remoteNote(note)
+                notes?.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "addNewNote") as? NoteViewController {
+            viewController.folderId = folderId
+            viewController.note = notes?[indexPath.row]
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
 }

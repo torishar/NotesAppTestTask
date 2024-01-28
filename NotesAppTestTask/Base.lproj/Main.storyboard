@@ -98,10 +98,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="New note"/>
+                                <connections>
+                                    <action selector="addNewNote:" destination="AZm-qL-PU4" eventType="touchUpInside" id="wsD-fs-FDg"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="ZES-SC-zrx" kind="show" id="mwd-ZU-Z6J"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -112,18 +112,18 @@
         <!--Note View Controller-->
         <scene sceneID="PsZ-qT-CL8">
             <objects>
-                <viewController id="ZES-SC-zrx" customClass="NoteViewController" customModule="NotesAppTestTask" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addNewNote" id="ZES-SC-zrx" customClass="NoteViewController" customModule="NotesAppTestTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I42-Xq-QQL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Note title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7gk-gt-rA1">
-                                <rect key="frame" x="20" y="123" width="353" height="34"/>
+                                <rect key="frame" x="20" y="79" width="353" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Note text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="W0Q-Uq-KLm">
-                                <rect key="frame" x="20" y="177" width="353" height="200"/>
+                                <rect key="frame" x="20" y="133" width="353" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="pq3-Po-D8t"/>
                                 </constraints>
@@ -150,9 +150,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                <connections>
+                                    <action selector="saveNote:" destination="ZES-SC-zrx" eventType="touchUpInside" id="M2s-bJ-sIh"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="noteDescription" destination="W0Q-Uq-KLm" id="e8V-Xf-agL"/>
+                        <outlet property="noteTitle" destination="7gk-gt-rA1" id="1ol-BI-OO3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MzA-Ux-B2Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

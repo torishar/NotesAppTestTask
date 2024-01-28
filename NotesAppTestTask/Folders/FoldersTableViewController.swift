@@ -21,6 +21,10 @@ class FoldersTableViewController: UITableViewController {
         getAllFolders()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getAllFolders()
+    }
+    
     private func getAllFolders(){
         self.folders = Array(realm.objects(FolderModel.self))
         tableView.reloadData()
@@ -55,7 +59,7 @@ class FoldersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "folder", for: indexPath)
         cell.textLabel?.text = folders?[indexPath.row].nameFolder
-        cell.detailTextLabel?.text = "\(folders?[indexPath.row].notes.count)"
+        cell.detailTextLabel?.text = "\(folders?[indexPath.row].notes.count ?? 0)"
         return cell
     }
     
