@@ -61,7 +61,8 @@ class FoldersTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showNotes", let dest = segue.destination as? NotesTableViewController, let selectFolderIndex = tableView.indexPathForSelectedRow {
-            //
+            let selectFolder = folders?[selectFolderIndex.row].id
+            dest.folderId = selectFolder
         }
     }
     
