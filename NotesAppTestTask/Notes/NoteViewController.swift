@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NoteViewController.swift
 //  NotesAppTestTask
 //
 //  Created by Viktoriia Sharukhina on 28.01.2024.
