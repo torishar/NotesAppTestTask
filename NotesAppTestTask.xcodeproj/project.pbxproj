@@ -19,6 +19,7 @@
 		617A7C292B66836100EFC4F2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 617A7C282B66836100EFC4F2 /* RealmSwift */; };
 		617A7C2B2B6684B100EFC4F2 /* FolderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A7C2A2B6684B100EFC4F2 /* FolderModel.swift */; };
 		617A7C2D2B66865200EFC4F2 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A7C2C2B66865200EFC4F2 /* NoteModel.swift */; };
+		617A7C332B66887D00EFC4F2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617A7C322B66887D00EFC4F2 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		617A7C212B667CF600EFC4F2 /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		617A7C2A2B6684B100EFC4F2 /* FolderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderModel.swift; sourceTree = "<group>"; };
 		617A7C2C2B66865200EFC4F2 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		617A7C322B66887D00EFC4F2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				617A7C302B66872700EFC4F2 /* AppDelegates */,
 				617A7C2E2B6686B700EFC4F2 /* Folders */,
 				617A7C2F2B6686C600EFC4F2 /* Notes */,
+				617A7C342B668C9F00EFC4F2 /* Servises */,
 				617A7C112B65C8E500EFC4F2 /* Main.storyboard */,
 				617A7C142B65C8E700EFC4F2 /* Assets.xcassets */,
 				617A7C162B65C8E700EFC4F2 /* LaunchScreen.storyboard */,
@@ -91,9 +94,8 @@
 		617A7C2F2B6686C600EFC4F2 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				617A7C0F2B65C8E500EFC4F2 /* NoteViewController.swift */,
 				617A7C212B667CF600EFC4F2 /* NotesTableViewController.swift */,
-				617A7C2C2B66865200EFC4F2 /* NoteModel.swift */,
+				617A7C312B66884E00EFC4F2 /* Note */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -105,6 +107,23 @@
 				617A7C0B2B65C8E500EFC4F2 /* AppDelegate.swift */,
 			);
 			path = AppDelegates;
+			sourceTree = "<group>";
+		};
+		617A7C312B66884E00EFC4F2 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				617A7C0F2B65C8E500EFC4F2 /* NoteViewController.swift */,
+				617A7C2C2B66865200EFC4F2 /* NoteModel.swift */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		617A7C342B668C9F00EFC4F2 /* Servises */ = {
+			isa = PBXGroup;
+			children = (
+				617A7C322B66887D00EFC4F2 /* Service.swift */,
+			);
+			path = Servises;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				617A7C102B65C8E500EFC4F2 /* NoteViewController.swift in Sources */,
+				617A7C332B66887D00EFC4F2 /* Service.swift in Sources */,
 				617A7C0C2B65C8E500EFC4F2 /* AppDelegate.swift in Sources */,
 				617A7C202B667CE500EFC4F2 /* FoldersTableViewController.swift in Sources */,
 				617A7C2D2B66865200EFC4F2 /* NoteModel.swift in Sources */,
