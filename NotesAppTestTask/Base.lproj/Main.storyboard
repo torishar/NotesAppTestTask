@@ -49,7 +49,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Folders" id="2gd-4W-Irl" userLabel="Folder Tables View Controller">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="FS3-jh-3ld">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="9u4-d7-KaI">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="9u4-d7-KaI">
                                 <rect key="frame" x="270" y="4.6666666666666679" width="107" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -93,7 +93,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Notes" id="YBy-uC-Iep">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="U2Q-0k-gG3">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4DI-dY-Bw8">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4DI-dY-Bw8">
                                 <rect key="frame" x="280" y="4.6666666666666679" width="97" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
@@ -131,6 +131,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHh-Ue-HgL">
+                                <rect key="frame" x="267" y="783" width="106" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add image"/>
+                                <connections>
+                                    <action selector="addImage:" destination="ZES-SC-zrx" eventType="touchUpInside" id="dEy-N8-OdB"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TcX-nI-bsz">
+                                <rect key="frame" x="20" y="353" width="353" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="UDF-dj-JvN"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4mo-Re-Z2E"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -138,9 +153,12 @@
                             <constraint firstItem="7gk-gt-rA1" firstAttribute="leading" secondItem="4mo-Re-Z2E" secondAttribute="leading" constant="20" id="2iL-wB-PKb"/>
                             <constraint firstItem="W0Q-Uq-KLm" firstAttribute="leading" secondItem="4mo-Re-Z2E" secondAttribute="leading" constant="20" id="AKz-8R-V7e"/>
                             <constraint firstItem="7gk-gt-rA1" firstAttribute="top" secondItem="4mo-Re-Z2E" secondAttribute="top" constant="20" id="Ayz-Gc-e4f"/>
+                            <constraint firstItem="TcX-nI-bsz" firstAttribute="top" secondItem="W0Q-Uq-KLm" secondAttribute="bottom" constant="20" id="BUi-VT-0DP"/>
                             <constraint firstItem="4mo-Re-Z2E" firstAttribute="trailing" secondItem="7gk-gt-rA1" secondAttribute="trailing" constant="20" id="VQr-8J-w4H"/>
+                            <constraint firstItem="TcX-nI-bsz" firstAttribute="leading" secondItem="4mo-Re-Z2E" secondAttribute="leading" constant="20" id="VnS-KA-bgT"/>
                             <constraint firstItem="4mo-Re-Z2E" firstAttribute="trailing" secondItem="W0Q-Uq-KLm" secondAttribute="trailing" constant="20" id="c18-2J-atF"/>
                             <constraint firstItem="W0Q-Uq-KLm" firstAttribute="top" secondItem="7gk-gt-rA1" secondAttribute="bottom" constant="20" id="lk9-vS-RNZ"/>
+                            <constraint firstItem="4mo-Re-Z2E" firstAttribute="trailing" secondItem="TcX-nI-bsz" secondAttribute="trailing" constant="20" id="nwB-7C-Bl4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NOn-Ge-b58">
@@ -157,13 +175,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageNote" destination="TcX-nI-bsz" id="gtK-g3-dyB"/>
                         <outlet property="noteDescription" destination="W0Q-Uq-KLm" id="e8V-Xf-agL"/>
                         <outlet property="noteTitle" destination="7gk-gt-rA1" id="1ol-BI-OO3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MzA-Ux-B2Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2566" y="37"/>
+            <point key="canvasLocation" x="2565.6488549618321" y="36.619718309859159"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vuc-Qf-sqK">
