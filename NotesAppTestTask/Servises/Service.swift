@@ -55,6 +55,7 @@ class Service {
         try! realm.write({
             note.noteTitle = newNote.noteTitle
             note.noteDescription = newNote.noteDescription
+            note.imageUrl = newNote.imageUrl
         })
     }
 }
