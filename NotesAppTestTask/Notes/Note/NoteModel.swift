@@ -13,4 +13,5 @@ class NoteModel: Object {
     @Persisted var noteTitle: String = ""
     @Persisted var noteDescription: String = ""
     @Persisted(originProperty: "notes") var assignee: LinkingObjects<FolderModel>
+    @Persisted var imageUrl: String?
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.path ?? "")
+        let config = Realm.Configuration(schemaVersion: 2)
+        Realm.Configuration.defaultConfiguration = config
         return true
     }
 
