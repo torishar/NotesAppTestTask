@@ -21,7 +21,13 @@ class NoteViewController: UIViewController {
         let newNote = NoteModel()
         newNote.noteTitle = noteTitle.text ?? ""
         newNote.noteDescription = noteDescription.text ?? ""
-        newNote.imageUrl = saveImageToDocumentDirectory(selectImage)
+        
+        if let selectImage = selectImage {
+            newNote.imageUrl = saveImageToDocumentDirectory(selectImage)
+        } else {
+            newNote.imageUrl = note?.imageUrl
+        }
+        
         if note == nil {
             if folderId != nil {
                 service.createNote(folderId!, newNote)
@@ -96,5 +102,3 @@ extension NoteViewController: UIImagePickerControllerDelegate & UINavigationCont
         dismiss(animated: true, completion: nil)
     }
 }
-
-
