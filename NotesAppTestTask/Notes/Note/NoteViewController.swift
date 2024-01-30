@@ -10,12 +10,16 @@ import RealmSwift
 
 class NoteViewController: UIViewController {
     
-    @IBOutlet weak var noteTitle: UITextField!
-    @IBOutlet weak var noteDescription: UITextView!
     var note: NoteModel?
     let service = Service()
     var folderId: ObjectId?
     var selectImage: UIImage?
+    private var isDescriptionPlaceholderShow = true
+    private var isTitlePlaceholderShow = true
+    
+    @IBOutlet weak var noteTitle: UITextField!
+    @IBOutlet weak var noteDescription: UITextView!
+    @IBOutlet weak var imageNote: UIImageView!
     
     @IBAction func saveNote(_ sender: Any) {
         let newNote = NoteModel()
@@ -38,8 +42,6 @@ class NoteViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBOutlet weak var imageNote: UIImageView!
-    
     @IBAction func addImage(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.delegate = self
@@ -49,6 +51,12 @@ class NoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        noteDescription.text = "Note description..."
+        noteDescription.delegate = self
+        noteTitle.text = "Note title..."
+        noteTitle.delegate = self
+        
         if note != nil {
             noteTitle.text = note?.noteTitle
             noteDescription.text = note?.noteDescription
@@ -88,6 +96,7 @@ class NoteViewController: UIViewController {
 
 }
 
+// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
 extension NoteViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -100,5 +109,41 @@ extension NoteViewController: UIImagePickerControllerDelegate & UINavigationCont
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - UITextViewDelegate
+extension NoteViewController: UITextViewDelegate {
+
+    func textViewDidChange(_ textView: UITextView) {
+        if isDescriptionPlaceholderShow {
+            textView.text = ""
+            isDescriptionPlaceholderShow = false
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Note description..."
+            isDescriptionPlaceholderShow = true
+        }
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension NoteViewController: UITextFieldDelegate {
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        if isTitlePlaceholderShow {
+            textField.text = ""
+            isTitlePlaceholderShow = false
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text?.isEmpty ?? true {
+            textField.text = "Note title..."
+            isTitlePlaceholderShow = false
+        }
     }
 }

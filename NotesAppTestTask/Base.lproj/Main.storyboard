@@ -175,7 +175,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageNote" destination="TcX-nI-bsz" id="gtK-g3-dyB"/>
+                        <outlet property="imageNote" destination="TcX-nI-bsz" id="KpJ-hp-Pv3"/>
                         <outlet property="noteDescription" destination="W0Q-Uq-KLm" id="e8V-Xf-agL"/>
                         <outlet property="noteTitle" destination="7gk-gt-rA1" id="1ol-BI-OO3"/>
                     </connections>
