@@ -51,6 +51,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6112B05C2B6A55D300649C3E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				617A7C2A2B6684B100EFC4F2 /* FolderModel.swift */,
+				617A7C2C2B66865200EFC4F2 /* NoteModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6112B05D2B6A562400649C3E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				617A7C2F2B6686C600EFC4F2 /* Notes */,
+				617A7C2E2B6686B700EFC4F2 /* Folders */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		617A7BFF2B65C8E500EFC4F2 = {
 			isa = PBXGroup;
 			children = (
@@ -70,10 +88,10 @@
 		617A7C0A2B65C8E500EFC4F2 /* NotesAppTestTask */ = {
 			isa = PBXGroup;
 			children = (
-				617A7C302B66872700EFC4F2 /* AppDelegates */,
-				617A7C2E2B6686B700EFC4F2 /* Folders */,
-				617A7C2F2B6686C600EFC4F2 /* Notes */,
+				6112B05D2B6A562400649C3E /* ViewControllers */,
+				6112B05C2B6A55D300649C3E /* Models */,
 				617A7C342B668C9F00EFC4F2 /* Servises */,
+				617A7C302B66872700EFC4F2 /* AppDelegates */,
 				617A7C112B65C8E500EFC4F2 /* Main.storyboard */,
 				617A7C142B65C8E700EFC4F2 /* Assets.xcassets */,
 				617A7C162B65C8E700EFC4F2 /* LaunchScreen.storyboard */,
@@ -86,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				617A7C1F2B667CE500EFC4F2 /* FoldersTableViewController.swift */,
-				617A7C2A2B6684B100EFC4F2 /* FolderModel.swift */,
 			);
 			path = Folders;
 			sourceTree = "<group>";
@@ -95,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				617A7C212B667CF600EFC4F2 /* NotesTableViewController.swift */,
-				617A7C312B66884E00EFC4F2 /* Note */,
+				617A7C0F2B65C8E500EFC4F2 /* NoteViewController.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -107,15 +124,6 @@
 				617A7C0D2B65C8E500EFC4F2 /* SceneDelegate.swift */,
 			);
 			path = AppDelegates;
-			sourceTree = "<group>";
-		};
-		617A7C312B66884E00EFC4F2 /* Note */ = {
-			isa = PBXGroup;
-			children = (
-				617A7C0F2B65C8E500EFC4F2 /* NoteViewController.swift */,
-				617A7C2C2B66865200EFC4F2 /* NoteModel.swift */,
-			);
-			path = Note;
 			sourceTree = "<group>";
 		};
 		617A7C342B668C9F00EFC4F2 /* Servises */ = {
