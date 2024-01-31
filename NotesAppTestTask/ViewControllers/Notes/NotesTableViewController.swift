@@ -19,6 +19,10 @@ class NotesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getNotes()
+        
+        if let folderName = realm.object(ofType: FolderModel.self, forPrimaryKey: folderId)?.nameFolder {
+            navigationItem.title = folderName
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
