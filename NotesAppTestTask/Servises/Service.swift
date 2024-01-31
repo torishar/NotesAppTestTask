@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class Service {
+final class Service {
     let realm = try! Realm()
     
     //MARK: - Creating a new folder

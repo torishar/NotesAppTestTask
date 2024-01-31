@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class FoldersTableViewController: UITableViewController {
+final class FoldersTableViewController: UITableViewController {
     
-    var alert = UIAlertController()
-    let realm = try! Realm()
-    var folders: [FolderModel]?
-    let service = Service()
-    let titleAttributes: [NSAttributedString.Key: Any] = [
+    private var alert = UIAlertController()
+    private let realm = try! Realm()
+    private var folders: [FolderModel]?
+    private let service = Service()
+    private let titleAttributes: [NSAttributedString.Key: Any] = [
         .foregroundColor: UIColor(named: "titleFont") ?? UIColor.black,
         .font: UIFont.systemFont(ofSize: 22, weight: .bold)
     ]

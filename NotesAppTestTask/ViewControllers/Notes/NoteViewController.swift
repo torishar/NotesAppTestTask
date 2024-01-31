@@ -8,12 +8,12 @@
 import UIKit
 import RealmSwift
 
-class NoteViewController: UIViewController {
+final class NoteViewController: UIViewController {
     
     var note: NoteModel?
-    let service = Service()
+    private let service = Service()
     var folderId: ObjectId?
-    var selectImage: UIImage?
+    private var selectImage: UIImage?
     private var isDescriptionPlaceholderShow = true
     private var isTitlePlaceholderShow = true
     
@@ -70,7 +70,7 @@ class NoteViewController: UIViewController {
         saveNote.tintColor = UIColor(named: "font")
     }
     
-    func saveImageToDocumentDirectory(_ image: UIImage?) -> String? {
+    private func saveImageToDocumentDirectory(_ image: UIImage?) -> String? {
         guard let image = image,
               let jpgImageData = image.jpegData(compressionQuality: 1.0) else {
             return nil
@@ -87,7 +87,7 @@ class NoteViewController: UIViewController {
         }
     }
     
-    func loadImageFromDocumentDirectory(_ imageUrl: String) -> UIImage? {
+    private func loadImageFromDocumentDirectory(_ imageUrl: String) -> UIImage? {
         let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(imageUrl)
         do {
             let imageData = try Data(contentsOf: fileURL)

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import RealmSwift
 
-class NotesTableViewController: UITableViewController {
+final class NotesTableViewController: UITableViewController {
 
     let realm = try! Realm()
     var folderId: ObjectId?

@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class FolderModel: Object {
+final class FolderModel: Object {
     @Persisted(primaryKey: true) var id: ObjectId
     @Persisted var nameFolder: String = ""
     @Persisted var notes: List<NoteModel>

@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class NoteModel: Object {
+final class NoteModel: Object {
     @Persisted(primaryKey: true) var id: ObjectId
     @Persisted var noteTitle: String = ""
     @Persisted var noteDescription: String = ""
