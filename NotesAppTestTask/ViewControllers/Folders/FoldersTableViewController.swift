@@ -15,10 +15,18 @@ class FoldersTableViewController: UITableViewController {
     let realm = try! Realm()
     var folders: [FolderModel]?
     let service = Service()
-
+    let titleAttributes: [NSAttributedString.Key: Any] = [
+        .foregroundColor: UIColor(named: "titleFont") ?? UIColor.black,
+        .font: UIFont.systemFont(ofSize: 22, weight: .bold)
+    ]
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         getAllFolders()
+        
+        self.navigationController?.navigationBar.titleTextAttributes = titleAttributes
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "font")
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,11 +45,11 @@ class FoldersTableViewController: UITableViewController {
     }
     
     private func alertAction() {
-        alert = UIAlertController(title: "Add folder", message: "", preferredStyle: .alert)
+        alert = UIAlertController(title: "New folder", message: "", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Folder name"
         }
-        
+        alert.view.tintColor = UIColor(named: "font")
         let alertAction = UIAlertAction(title: "Add", style: .default) { action in
             if let text = self.alert.textFields?[0].text {
                 self.service.creatFolder(text)
@@ -49,7 +57,11 @@ class FoldersTableViewController: UITableViewController {
             }
         }
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+        }
+        
         alert.addAction(alertAction)
+        alert.addAction(cancelAction)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

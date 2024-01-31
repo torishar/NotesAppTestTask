@@ -48,11 +48,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Folders" id="2gd-4W-Irl" userLabel="Folder Tables View Controller">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="FS3-jh-3ld">
+                        <barButtonItem key="rightBarButtonItem" id="FS3-jh-3ld">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="9u4-d7-KaI">
-                                <rect key="frame" x="270" y="5" width="107" height="35"/>
+                                <rect key="frame" x="270" y="4.6666666666666679" width="107" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="New folder"/>
                                 <buttonConfiguration key="configuration" style="plain" title="New folder"/>
                                 <connections>
                                     <action selector="addFolder:" destination="77F-5c-6s3" eventType="touchUpInside" id="LhD-gP-9Rr"/>
@@ -92,11 +93,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Notes" id="YBy-uC-Iep">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="U2Q-0k-gG3">
+                        <barButtonItem key="rightBarButtonItem" id="U2Q-0k-gG3">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="4DI-dY-Bw8">
                                 <rect key="frame" x="280" y="4.6666666666666679" width="97" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="New note"/>
                                 <buttonConfiguration key="configuration" style="plain" title="New note"/>
                                 <connections>
                                     <action selector="addNewNote:" destination="AZm-qL-PU4" eventType="touchUpInside" id="wsD-fs-FDg"/>
@@ -178,6 +180,7 @@
                         <outlet property="imageNote" destination="TcX-nI-bsz" id="KpJ-hp-Pv3"/>
                         <outlet property="noteDescription" destination="W0Q-Uq-KLm" id="e8V-Xf-agL"/>
                         <outlet property="noteTitle" destination="7gk-gt-rA1" id="1ol-BI-OO3"/>
+                        <outlet property="saveNote" destination="oHh-Ue-HgL" id="bwb-T7-qyT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MzA-Ux-B2Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

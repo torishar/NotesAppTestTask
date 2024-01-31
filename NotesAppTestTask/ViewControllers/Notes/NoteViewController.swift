@@ -20,6 +20,7 @@ class NoteViewController: UIViewController {
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteDescription: UITextView!
     @IBOutlet weak var imageNote: UIImageView!
+    @IBOutlet weak var saveNote: UIButton!
     
     @IBAction func saveNote(_ sender: Any) {
         let newNote = NoteModel()
@@ -65,6 +66,8 @@ class NoteViewController: UIViewController {
                 imageNote.image = image
             }
         }
+        
+        saveNote.tintColor = UIColor(named: "font")
     }
     
     func saveImageToDocumentDirectory(_ image: UIImage?) -> String? {
