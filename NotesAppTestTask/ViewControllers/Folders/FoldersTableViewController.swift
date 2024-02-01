@@ -16,7 +16,7 @@ final class FoldersTableViewController: UITableViewController {
     private var folders: [FolderModel]?
     private let service = Service()
     private let titleAttributes: [NSAttributedString.Key: Any] = [
-        .foregroundColor: UIColor(named: "green") ?? UIColor.black,
+        .foregroundColor: UIColor(named: "darkGreen") ?? UIColor.black,
         .font: UIFont.systemFont(ofSize: 22, weight: .bold)
     ]
      
@@ -25,7 +25,7 @@ final class FoldersTableViewController: UITableViewController {
         getAllFolders()
         
         self.navigationController?.navigationBar.titleTextAttributes = titleAttributes
-        self.navigationController?.navigationBar.tintColor = UIColor(named: "pink")
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "mainPink")
 
     }
     
@@ -49,7 +49,7 @@ final class FoldersTableViewController: UITableViewController {
         alert.addTextField { (textField) in
             textField.placeholder = "Folder name"
         }
-        alert.view.tintColor = UIColor(named: "pink")
+        alert.view.tintColor = UIColor(named: "mainPink")
         let alertAction = UIAlertAction(title: "Add", style: .default) { action in
             if let text = self.alert.textFields?[0].text {
                 self.service.creatFolder(text)

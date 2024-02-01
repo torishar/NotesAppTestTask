@@ -45,7 +45,7 @@ final class NoteViewController: UIViewController {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = .photoLibrary
-        picker.view.tintColor = UIColor(named: "pink")
+        picker.view.tintColor = UIColor(named: "mainPink")
         present(picker, animated: true, completion: nil)
     }
     
@@ -76,7 +76,7 @@ final class NoteViewController: UIViewController {
             }
         }
         
-        saveNote.tintColor = UIColor(named: "pink")
+        saveNote.tintColor = UIColor(named: "mainPink")
     }
     
     private func saveImageToDocumentDirectory(_ image: UIImage?) -> String? {
