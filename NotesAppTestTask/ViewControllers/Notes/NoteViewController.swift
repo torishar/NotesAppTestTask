@@ -14,7 +14,7 @@ final class NoteViewController: UIViewController {
     private let service = Service()
     var folderId: ObjectId?
     private var selectImage: UIImage?
-    
+    private let borderColor = UIColor(named: "lightGreen")?.cgColor
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteDescription: UITextView!
     @IBOutlet weak var imageNote: UIImageView!
@@ -45,7 +45,7 @@ final class NoteViewController: UIViewController {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = .photoLibrary
-        picker.view.tintColor = UIColor(named: "font")
+        picker.view.tintColor = UIColor(named: "pink")
         present(picker, animated: true, completion: nil)
     }
     
@@ -54,8 +54,18 @@ final class NoteViewController: UIViewController {
 
         noteDescription.text = "Note description..."
         noteDescription.delegate = self
+        noteDescription.layer.borderWidth = 1
+        noteDescription.layer.borderColor = borderColor
+        noteDescription.layer.cornerRadius = 7
+        
         noteTitle.text = "Note title..."
         noteTitle.delegate = self
+        noteTitle.layer.borderWidth = 1
+        noteTitle.layer.borderColor = borderColor
+        noteTitle.layer.cornerRadius = 7
+        
+        imageNote.layer.cornerRadius = 7
+        imageNote.layer.masksToBounds = true
         
         if note != nil {
             noteTitle.text = note?.noteTitle
@@ -66,7 +76,7 @@ final class NoteViewController: UIViewController {
             }
         }
         
-        saveNote.tintColor = UIColor(named: "font")
+        saveNote.tintColor = UIColor(named: "pink")
     }
     
     private func saveImageToDocumentDirectory(_ image: UIImage?) -> String? {
