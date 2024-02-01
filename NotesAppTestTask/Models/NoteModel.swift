@@ -14,4 +14,5 @@ final class NoteModel: Object {
     @Persisted var noteDescription: String = ""
     @Persisted(originProperty: "notes") var assignee: LinkingObjects<FolderModel>
     @Persisted var imageUrl: String?
+    @Persisted var dateOfCreatingNote: Date = Date()
 }

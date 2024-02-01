@@ -51,6 +51,7 @@ final class NotesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "note", for: indexPath)
         cell.textLabel?.text = notes?[indexPath.row].noteTitle
+        cell.detailTextLabel?.text = "\(notes?[indexPath.row].dateOfCreatingNote.formatted(date: .abbreviated, time: .omitted) ?? Date().formatted(date: .abbreviated, time: .omitted))"
         
         return cell
     }
