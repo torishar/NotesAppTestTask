@@ -45,6 +45,7 @@ final class NoteViewController: UIViewController {
         let picker = UIImagePickerController()
         picker.delegate = self
         picker.sourceType = .photoLibrary
+        picker.view.tintColor = UIColor(named: "font")
         present(picker, animated: true, completion: nil)
     }
     
