@@ -14,8 +14,6 @@ final class NoteViewController: UIViewController {
     private let service = Service()
     var folderId: ObjectId?
     private var selectImage: UIImage?
-    private var isDescriptionPlaceholderShow = true
-    private var isTitlePlaceholderShow = true
     
     @IBOutlet weak var noteTitle: UITextField!
     @IBOutlet weak var noteDescription: UITextView!
@@ -118,17 +116,15 @@ extension NoteViewController: UIImagePickerControllerDelegate & UINavigationCont
 // MARK: - UITextViewDelegate
 extension NoteViewController: UITextViewDelegate {
 
-    func textViewDidChange(_ textView: UITextView) {
-        if isDescriptionPlaceholderShow {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "Note description..." {
             textView.text = ""
-            isDescriptionPlaceholderShow = false
         }
     }
-    
+
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Note description..."
-            isDescriptionPlaceholderShow = true
         }
     }
 }
@@ -136,17 +132,15 @@ extension NoteViewController: UITextViewDelegate {
 // MARK: - UITextFieldDelegate
 extension NoteViewController: UITextFieldDelegate {
     
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        if isTitlePlaceholderShow {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField.text == "Note title..." {
             textField.text = ""
-            isTitlePlaceholderShow = false
         }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.text?.isEmpty ?? true {
             textField.text = "Note title..."
-            isTitlePlaceholderShow = false
         }
     }
 }
